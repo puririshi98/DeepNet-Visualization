@@ -5,7 +5,8 @@ from builtins import range
 import urllib.request, urllib.error, urllib.parse, os, tempfile
 
 import numpy as np
-from cv2 import imread, imresize
+from cv2 import imread, resize
+imresize = resize
 
 """
 Utility functions used for viewing and processing images.
