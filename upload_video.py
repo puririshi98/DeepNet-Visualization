@@ -157,7 +157,7 @@ def resumable_upload(insert_request):
 			print ("Sleeping %f seconds and then retrying..." % sleep_seconds)
 			time.sleep(sleep_seconds)
 
-defmain()
+def main()
 	argparser.add_argument("--file", required=True, help="Video file to upload")
 	argparser.add_argument("--title", help="Video title", default="Test Title")
 	argparser.add_argument("--description", help="Video description",default="Test Description")
