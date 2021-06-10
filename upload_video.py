@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-import httplib
 import httplib2
+import http.client as httplib
 import os
 import random
 import sys
@@ -157,7 +157,7 @@ def resumable_upload(insert_request):
 			print ("Sleeping %f seconds and then retrying..." % sleep_seconds)
 			time.sleep(sleep_seconds)
 
-def main()
+def main():
 	argparser.add_argument("--file", required=True, help="Video file to upload")
 	argparser.add_argument("--title", help="Video title", default="Test Title")
 	argparser.add_argument("--description", help="Video description",default="Test Description")
@@ -172,5 +172,6 @@ def main()
 	youtube = get_authenticated_service(args)
 	try:
 		initialize_upload(youtube, args)
+		print("done")
 	except HttpError as e:
 		print ("An HTTP error %d occurred:\n%s" % (e.resp.status, e.content))
